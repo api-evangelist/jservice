@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/api-evangelist/jservice/json-schema/jservice-clue-schema.json",
+  "title": "jService Clue",
+  "description": "A Jeopardy! clue (question + answer pair) sourced from jArchive and served by jService.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Database identifier."
+    },
+    "answer": {
+      "type": "string",
+      "description": "The Jeopardy 'answer' (the clue read by the host)."
+    },
+    "question": {
+      "type": "string",
+      "description": "The Jeopardy 'question' (the response a contestant must give)."
+    },
+    "value": {
+      "type": ["integer", "null"],
+      "description": "Dollar value of the clue. Null for Final Jeopardy clues."
+    },
+    "airdate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the clue first aired."
+    },
+    "category_id": {
+      "type": "integer",
+      "description": "Foreign key to the parent category."
+    },
+    "game_id": {
+      "type": ["integer", "null"],
+      "description": "Foreign key to the originating Jeopardy! game."
+    },
+    "invalid_count": {
+      "type": ["integer", "null"],
+      "description": "How many users have flagged this clue as invalid via POST /api/invalid."
+    },
+    "category": {
+      "$ref": "jservice-category-schema.json",
+      "description": "Embedded parent category (returned by /api/random, /api/final, /api/clues)."
+    }
+  },
+  "required": ["id", "answer", "question", "category_id"]
+}

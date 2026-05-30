@@ -1,0 +1,28 @@
+{
+  "operation": "POST /api/invalid",
+  "operationId": "markClueInvalid",
+  "request": {
+    "method": "POST",
+    "url": "http://jservice.io/api/invalid?id=105912",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "id": 105912,
+      "answer": "Lake Superior",
+      "question": "This Great Lake is the largest by surface area",
+      "value": 200,
+      "airdate": "2010-10-15T19:00:00.000Z",
+      "category_id": 11496,
+      "game_id": 3035,
+      "invalid_count": 1
+    }
+  }
+}

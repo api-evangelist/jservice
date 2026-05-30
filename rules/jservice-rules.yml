@@ -1,0 +1,107 @@
+extends:
+  - spectral:oas
+documentationUrl: https://github.com/sottenad/jService
+formats:
+  - oas3
+rules:
+  # ----- Naming conventions -----
+  jservice-operation-id-camelcase:
+    description: operationId must be camelCase (matches jService's existing operationIds).
+    given: $.paths.*[get,post,put,patch,delete].operationId
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-zA-Z0-9]*$'
+
+  jservice-snake-case-properties:
+    description: Schema properties must be snake_case (matches Rails/ActiveRecord JSON output).
+    given: $.components.schemas.*.properties.*~
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-z0-9_]*$'
+
+  jservice-snake-case-query-params:
+    description: Query parameters must be snake_case.
+    given: $.paths.*[get,post,put,patch,delete].parameters[?(@.in=='query')].name
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-z0-9_]*$'
+
+  # ----- Summaries and descriptions -----
+  jservice-summary-title-case:
+    description: Operation summary should be Title Case.
+    given: $.paths.*[get,post,put,patch,delete].summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][A-Za-z0-9]*)(\s+[A-Z][A-Za-z0-9]*)*$'
+
+  jservice-summary-required:
+    description: Every operation must have a summary.
+    given: $.paths.*[get,post,put,patch,delete]
+    severity: error
+    then:
+      field: summary
+      function: truthy
+
+  jservice-description-required:
+    description: Every operation must have a description.
+    given: $.paths.*[get,post,put,patch,delete]
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  # ----- Tagging -----
+  jservice-tag-required:
+    description: Every operation must be tagged.
+    given: $.paths.*[get,post,put,patch,delete]
+    severity: error
+    then:
+      field: tags
+      function: truthy
+
+  jservice-allowed-tags:
+    description: Operations must use one of the known jService tags.
+    given: $.paths.*[get,post,put,patch,delete].tags[*]
+    severity: warn
+    then:
+      function: enumeration
+      functionOptions:
+        values: [Clues, Categories, Moderation]
+
+  # ----- API surface conventions -----
+  jservice-paths-under-api:
+    description: All operational paths live under /api/.
+    given: $.paths
+    severity: warn
+    then:
+      function: pattern
+      field: '@key'
+      functionOptions:
+        match: '^/api/'
+
+  jservice-pagination-max-100:
+    description: count/offset limits should mirror the source code (count <= 100).
+    given: $.paths.*.get.parameters[?(@.name=='count')].schema
+    severity: warn
+    then:
+      field: maximum
+      function: truthy
+
+  # ----- JSON only -----
+  jservice-json-only:
+    description: jService responds only in application/json.
+    given: $.paths.*[get,post,put,patch,delete].responses.*.content
+    severity: error
+    then:
+      function: pattern
+      field: '@key'
+      functionOptions:
+        match: '^application/json'

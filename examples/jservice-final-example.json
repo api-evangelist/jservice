@@ -1,0 +1,31 @@
+{
+  "operation": "GET /api/final",
+  "operationId": "getFinalClues",
+  "request": {
+    "method": "GET",
+    "url": "http://jservice.io/api/final?count=1"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": [
+      {
+        "id": 88321,
+        "answer": "Marie Curie",
+        "question": "She is the only person to win Nobel prizes in two different sciences",
+        "value": null,
+        "airdate": "2008-04-04T19:00:00.000Z",
+        "category_id": 8221,
+        "game_id": 2455,
+        "invalid_count": 0,
+        "category": {
+          "id": 8221,
+          "title": "famous scientists",
+          "clues_count": 12
+        }
+      }
+    ]
+  }
+}

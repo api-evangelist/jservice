@@ -1,0 +1,203 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "jService Trivia API — Clues"
+  description: >-
+    Clues — Jeopardy! questions, answers, and metadata. 3 operations. Lead operation:
+    Get Random Clues. Self-contained Naftiko capability covering one jService business
+    surface (trivia clue retrieval over the open-source jService Rails API).
+  tags:
+    - Jservice
+    - Trivia
+    - Clues
+  created: "2026-05-30"
+  modified: "2026-05-30"
+
+binds:
+  - namespace: env
+    keys:
+      JSERVICE_BASE_URL: JSERVICE_BASE_URL
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "jservice-clues"
+      baseUri: "{{env.JSERVICE_BASE_URL}}"
+      description: "jService Trivia API — Clues business capability. Self-contained, no shared references. Default baseUri is http://localhost:3000 for self-hosted instances; the historical http://jservice.io endpoint is offline."
+      resources:
+        - name: "random"
+          path: "/api/random"
+          operations:
+            - name: "getRandomClues"
+              method: GET
+              description: "Get N random clues (default 1, max 100), including parent category."
+              inputParameters:
+                - name: "count"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Number of clues to return (1-100)."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: "final"
+          path: "/api/final"
+          operations:
+            - name: "getFinalClues"
+              method: GET
+              description: "Get N random Final Jeopardy clues (clues with no value)."
+              inputParameters:
+                - name: "count"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Number of clues to return (1-100)."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: "clues"
+          path: "/api/clues"
+          operations:
+            - name: "listClues"
+              method: GET
+              description: "List clues with filters: value, category, min_date, max_date, game_id, offset."
+              inputParameters:
+                - name: "value"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Dollar value of the clue."
+                - name: "category"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Category ID."
+                - name: "min_date"
+                  in: query
+                  type: string
+                  required: false
+                  description: "Earliest airdate."
+                - name: "max_date"
+                  in: query
+                  type: string
+                  required: false
+                  description: "Latest airdate."
+                - name: "game_id"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Jeopardy! game ID."
+                - name: "offset"
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Pagination offset."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      namespace: "jservice-clues-rest"
+      port: 8080
+      description: "REST adapter for jService — Clues. One Spectral-compliant resource per consumed operation, prefixed with /v1."
+      resources:
+        - path: "/v1/random-clues"
+          name: "random-clues"
+          description: "REST surface for random clue retrieval."
+          operations:
+            - method: GET
+              name: "getRandomClues"
+              description: "Get N random clues."
+              call: "jservice-clues.getRandomClues"
+              with:
+                "count": "rest.count"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: "/v1/final-clues"
+          name: "final-clues"
+          description: "REST surface for Final Jeopardy clue retrieval."
+          operations:
+            - method: GET
+              name: "getFinalClues"
+              description: "Get N random Final Jeopardy clues."
+              call: "jservice-clues.getFinalClues"
+              with:
+                "count": "rest.count"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: "/v1/clues"
+          name: "clues"
+          description: "REST surface for filtered clue listing."
+          operations:
+            - method: GET
+              name: "listClues"
+              description: "List clues with filters."
+              call: "jservice-clues.listClues"
+              with:
+                "value": "rest.value"
+                "category": "rest.category"
+                "min_date": "rest.min_date"
+                "max_date": "rest.max_date"
+                "game_id": "rest.game_id"
+                "offset": "rest.offset"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      namespace: "jservice-clues-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for jService — Clues. One tool per consumed operation, routed inline through this capability's consumes block."
+      tools:
+        - name: "get-random-clues"
+          description: "Get N random Jeopardy! clues with their categories."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "jservice-clues.getRandomClues"
+          with:
+            "count": "tools.count"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: "get-final-clues"
+          description: "Get N random Final Jeopardy clues."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "jservice-clues.getFinalClues"
+          with:
+            "count": "tools.count"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: "list-clues"
+          description: "List clues filtered by value, category, airdate window, and game ID."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "jservice-clues.listClues"
+          with:
+            "value": "tools.value"
+            "category": "tools.category"
+            "min_date": "tools.min_date"
+            "max_date": "tools.max_date"
+            "game_id": "tools.game_id"
+            "offset": "tools.offset"
+          outputParameters:
+            - type: object
+              mapping: "$."

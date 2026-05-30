@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/api-evangelist/jservice/json-schema/jservice-category-schema.json",
+  "title": "jService Category",
+  "description": "A Jeopardy! category that groups related clues.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Database identifier."
+    },
+    "title": {
+      "type": "string",
+      "description": "Category title as it appeared on the show."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "clues_count": {
+      "type": "integer",
+      "default": 0,
+      "description": "Cached count of clues belonging to this category."
+    },
+    "clues": {
+      "type": "array",
+      "description": "Embedded clues (returned by /api/category).",
+      "items": {
+        "$ref": "jservice-clue-schema.json"
+      }
+    }
+  },
+  "required": ["id", "title"]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/v1/schema",
+  "name": "jServiceCategory",
+  "description": "Structural definition of a Jeopardy! category as served by the jService API.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int32", "primary": true },
+    "title": { "type": "string", "maxLength": 255 },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" },
+    "clues_count": { "type": "int32", "default": 0, "description": "Counter cache for child clues." }
+  },
+  "relations": [
+    { "name": "clues", "type": "has_many", "target": "jServiceClue", "foreignKey": "category_id" }
+  ],
+  "indexes": [
+    { "name": "by_title", "fields": ["title"] }
+  ],
+  "required": ["id", "title"]
+}

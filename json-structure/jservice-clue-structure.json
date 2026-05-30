@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/v1/schema",
+  "name": "jServiceClue",
+  "description": "Structural definition of a Jeopardy! clue as served by the jService API.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int32", "primary": true },
+    "answer": { "type": "string", "maxLength": 500 },
+    "question": { "type": "string", "maxLength": 2000 },
+    "value": { "type": "int32", "nullable": true, "description": "Dollar value; null = Final Jeopardy." },
+    "airdate": { "type": "datetime" },
+    "category_id": { "type": "int32", "references": "jServiceCategory.id" },
+    "game_id": { "type": "int32", "nullable": true },
+    "invalid_count": { "type": "int32", "nullable": true, "default": 0 }
+  },
+  "indexes": [
+    { "name": "by_category", "fields": ["category_id"] },
+    { "name": "by_game", "fields": ["game_id"] },
+    { "name": "by_airdate", "fields": ["airdate"] },
+    { "name": "by_value", "fields": ["value"] }
+  ],
+  "required": ["id", "answer", "question", "category_id"]
+}

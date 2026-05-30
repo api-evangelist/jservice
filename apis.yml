@@ -1,32 +1,100 @@
 aid: jservice
-name: Jservice
-description: "Jeopardy Question Database"
-url: http://jservice.io
+name: jService
+description: >-
+  jService is an open source Ruby on Rails trivia API that serves approximately 200,000
+  Jeopardy! questions, answers, and categories scraped from the J! Archive fan site. The
+  original public deployment at jservice.io is no longer operational, but the project
+  (sottenad/jService, MIT licensed) remains available for self-hosting against PostgreSQL.
+  The API exposes random clues, final Jeopardy clues, filtered clue queries, category
+  listings, single-category lookup, and invalid-clue reporting under /api/*.
+url: https://github.com/sottenad/jService
+image: https://avatars.githubusercontent.com/u/957383?v=4
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-30'
 x-source: public-apis/public-apis
 x-category: "Games & Comics"
+x-type: opensource
+x-status: deprecated
+x-status-reason: >-
+  Original hosted endpoint at jservice.io is offline (parked / for-sale holding page).
+  The open source project is unarchived and still maintainable; last push 2024-01-30.
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
+x-governance: community
+x-license: MIT
+x-language: Ruby
+x-data-source: J! Archive (j-archive.com)
 tags:
   - Games And Comics
+  - Trivia
+  - Jeopardy
+  - Open Source
+  - Ruby
+  - Rails
   - Public APIs
 apis:
-  - name: Jservice
-    description: "Jeopardy Question Database"
-    humanURL: http://jservice.io
+  - name: jService Trivia API
+    description: >-
+      REST/JSON API exposing Jeopardy! clues, categories, and random questions, designed
+      for trivia apps, study tools, chatbots, and game shows. Self-hosted against
+      PostgreSQL; the historical public endpoint at jservice.io is offline.
+    humanURL: https://github.com/sottenad/jService
     baseURL: http://jservice.io
+    image: https://avatars.githubusercontent.com/u/957383?v=4
     tags:
+      - Trivia
+      - Jeopardy
       - Games And Comics
     properties:
       - type: Documentation
-        url: http://jservice.io
+        url: https://github.com/sottenad/jService#readme
+      - type: SourceCode
+        url: https://github.com/sottenad/jService
+      - type: OpenAPI
+        url: openapi/jservice-openapi.yml
+      - type: JSONSchema
+        url: json-schema/jservice-clue-schema.json
+      - type: JSONSchema
+        url: json-schema/jservice-category-schema.json
+      - type: JSONStructure
+        url: json-structure/jservice-clue-structure.json
+      - type: JSONStructure
+        url: json-structure/jservice-category-structure.json
+      - type: JSONLD
+        url: json-ld/jservice-context.jsonld
+      - type: SpectralRules
+        url: rules/jservice-rules.yml
+      - type: Capabilities
+        url: capabilities/trivia-game.yaml
+      - type: Examples
+        url: examples/jservice-random-example.json
+      - type: Vocabulary
+        url: vocabulary/jservice-vocabulary.yml
+      - type: Status
+        url: https://jservice.io
+        x-status: offline
+      - type: License
+        url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
+        x-license: MIT
+      - type: Authentication
+        x-required: false
+      - type: RateLimit
+        x-documented: false
+    contact:
+      - FN: Steve Ottenad
+        url: https://github.com/sottenad
 common:
   - type: Website
-    url: http://jservice.io
+    url: https://github.com/sottenad/jService
+  - type: SourceCode
+    url: https://github.com/sottenad/jService
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - type: License
+    url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
+  - type: DataSource
+    url: https://j-archive.com
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

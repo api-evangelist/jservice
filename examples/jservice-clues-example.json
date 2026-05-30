@@ -1,0 +1,31 @@
+{
+  "operation": "GET /api/clues",
+  "operationId": "listClues",
+  "request": {
+    "method": "GET",
+    "url": "http://jservice.io/api/clues?value=200&offset=0"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": [
+      {
+        "id": 1,
+        "answer": "Copernicus",
+        "question": "This astronomer's heliocentric model challenged Ptolemaic cosmology",
+        "value": 200,
+        "airdate": "1996-12-26T12:00:00.000Z",
+        "category_id": 1,
+        "game_id": 1,
+        "invalid_count": 0,
+        "category": {
+          "id": 1,
+          "title": "history",
+          "clues_count": 42
+        }
+      }
+    ]
+  }
+}

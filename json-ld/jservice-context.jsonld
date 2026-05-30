@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "jservice": "https://github.com/api-evangelist/jservice/vocabulary#",
+    "Clue": "jservice:Clue",
+    "Category": "jservice:Category",
+    "id": "@id",
+    "answer": {
+      "@id": "schema:text",
+      "@type": "xsd:string"
+    },
+    "question": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "jservice:value",
+      "@type": "xsd:integer"
+    },
+    "airdate": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:dateTime"
+    },
+    "category_id": {
+      "@id": "jservice:categoryId",
+      "@type": "xsd:integer"
+    },
+    "game_id": {
+      "@id": "jservice:gameId",
+      "@type": "xsd:integer"
+    },
+    "invalid_count": {
+      "@id": "jservice:invalidCount",
+      "@type": "xsd:integer"
+    },
+    "category": {
+      "@id": "jservice:category",
+      "@type": "@id"
+    },
+    "title": "schema:name",
+    "created_at": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updated_at": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "clues_count": {
+      "@id": "jservice:cluesCount",
+      "@type": "xsd:integer"
+    },
+    "clues": {
+      "@id": "jservice:hasClue",
+      "@container": "@set"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}

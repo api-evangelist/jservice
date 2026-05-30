@@ -1,0 +1,106 @@
+name: jService Vocabulary
+description: >-
+  Operational and conceptual vocabulary for the jService trivia API — the open-source
+  Ruby on Rails Jeopardy! question database (sottenad/jService, MIT). Maps the
+  service's core entities, operations, capabilities, and domain terms.
+namespace: https://github.com/api-evangelist/jservice/vocabulary
+created: '2026-05-30'
+
+domains:
+  - name: Trivia
+    description: Knowledge-based question/answer content originally from televised game shows.
+  - name: Jeopardy
+    description: The Jeopardy! American game show franchise (Sony Pictures Television).
+  - name: Games And Comics
+    description: Public APIs catalog category covering games, comics, and entertainment.
+
+concepts:
+  - term: Clue
+    description: A single Jeopardy! question/answer pair with a dollar value and airdate.
+    synonyms: [Question, TriviaItem]
+    aligns:
+      - schema:Question
+  - term: Answer
+    description: The Jeopardy "answer" — the prompt the host reads aloud.
+  - term: Question
+    description: The Jeopardy "question" — the response a contestant must phrase.
+  - term: Category
+    description: A grouping label that organizes related clues on a Jeopardy board.
+    aligns:
+      - schema:DefinedTerm
+  - term: Game
+    description: One televised episode of Jeopardy, identified by game_id.
+  - term: Value
+    description: Dollar prize associated with a clue (200, 400, 600, 800, 1000, etc.). Null for Final Jeopardy.
+  - term: Airdate
+    description: Original broadcast date and time of the episode containing the clue.
+  - term: InvalidCount
+    description: User-submitted count of how many times a clue has been flagged as wrong or low quality.
+  - term: FinalJeopardy
+    description: The final round single clue without a dollar value attached.
+
+operations:
+  - id: getRandomClues
+    label: Get Random Clues
+    method: GET
+    path: /api/random
+    domain: Clues
+  - id: getFinalClues
+    label: Get Final Jeopardy Clues
+    method: GET
+    path: /api/final
+    domain: Clues
+  - id: listClues
+    label: List Clues
+    method: GET
+    path: /api/clues
+    domain: Clues
+  - id: listCategories
+    label: List Categories
+    method: GET
+    path: /api/categories
+    domain: Categories
+  - id: getCategory
+    label: Get Single Category
+    method: GET
+    path: /api/category
+    domain: Categories
+  - id: markClueInvalid
+    label: Mark Clue Invalid
+    method: POST
+    path: /api/invalid
+    domain: Moderation
+
+capabilities:
+  - id: trivia-random-question
+    label: Serve Random Trivia Question
+    operations: [getRandomClues]
+  - id: trivia-final-question
+    label: Serve Final Jeopardy Prompt
+    operations: [getFinalClues]
+  - id: trivia-filtered-search
+    label: Filter Clues By Value/Date/Category
+    operations: [listClues]
+  - id: trivia-category-browse
+    label: Browse Categories
+    operations: [listCategories, getCategory]
+  - id: trivia-content-moderation
+    label: Flag Invalid Clues
+    operations: [markClueInvalid]
+
+dataSources:
+  - name: J! Archive
+    url: https://j-archive.com
+    description: Fan-maintained archive of every Jeopardy! episode; the upstream source jService scrapes.
+
+ecosystem:
+  - role: Author
+    name: Steve Ottenad
+    url: https://github.com/sottenad
+  - role: SourceRepo
+    url: https://github.com/sottenad/jService
+  - role: HostedEndpoint
+    url: http://jservice.io
+    status: offline
+  - role: License
+    value: MIT
