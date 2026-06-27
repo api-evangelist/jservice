@@ -79,7 +79,7 @@ apis:
         x-license: MIT
       - type: Authentication
         x-required: false
-      - type: RateLimit
+      - type: RateLimits
         x-documented: false
     contact:
       - FN: Steve Ottenad
