@@ -85,6 +85,8 @@ apis:
       - FN: Steve Ottenad
         url: https://github.com/sottenad
 common:
+  - type: DomainSecurity
+    url: security/jservice-domain-security.yml
   - type: Website
     url: https://github.com/sottenad/jService
   - type: SourceCode
