@@ -8,6 +8,17 @@ description: >-
   The API exposes random clues, final Jeopardy clues, filtered clue queries, category
   listings, single-category lookup, and invalid-clue reporting under /api/*.
 url: https://github.com/sottenad/jService
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 image: https://avatars.githubusercontent.com/u/957383?v=4
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -34,56 +45,126 @@ tags:
   - Rails
   - Public APIs
 apis:
-  - name: jService Trivia API
-    description: >-
-      REST/JSON API exposing Jeopardy! clues, categories, and random questions, designed
-      for trivia apps, study tools, chatbots, and game shows. Self-hosted against
-      PostgreSQL; the historical public endpoint at jservice.io is offline.
-    humanURL: https://github.com/sottenad/jService
-    baseURL: http://jservice.io
-    image: https://avatars.githubusercontent.com/u/957383?v=4
-    tags:
-      - Trivia
-      - Jeopardy
-      - Games And Comics
-    properties:
-      - type: Documentation
-        url: https://github.com/sottenad/jService#readme
-      - type: SourceCode
-        url: https://github.com/sottenad/jService
-      - type: OpenAPI
-        url: openapi/jservice-openapi.yml
-      - type: JSONSchema
-        url: json-schema/jservice-clue-schema.json
-      - type: JSONSchema
-        url: json-schema/jservice-category-schema.json
-      - type: JSONStructure
-        url: json-structure/jservice-clue-structure.json
-      - type: JSONStructure
-        url: json-structure/jservice-category-structure.json
-      - type: JSONLD
-        url: json-ld/jservice-context.jsonld
-      - type: SpectralRules
-        url: rules/jservice-rules.yml
-      - type: Capabilities
-        url: capabilities/trivia-game.yaml
-      - type: Examples
-        url: examples/jservice-random-example.json
-      - type: Vocabulary
-        url: vocabulary/jservice-vocabulary.yml
-      - type: Status
-        url: https://jservice.io
-        x-status: offline
-      - type: License
-        url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
-        x-license: MIT
-      - type: Authentication
-        x-required: false
-      - type: RateLimits
-        x-documented: false
-    contact:
-      - FN: Steve Ottenad
-        url: https://github.com/sottenad
+- aid: jservice:jservice-categories-api
+  name: jService Categories API
+  description: Category collections of clues.
+  humanURL: https://github.com/sottenad/jService
+  baseURL: http://jservice.io
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/jservice-categories-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/sottenad/jService#readme
+  - type: SourceCode
+    url: https://github.com/sottenad/jService
+  - type: JSONSchema
+    url: json-schema/jservice-clue-schema.json
+  - type: JSONSchema
+    url: json-schema/jservice-category-schema.json
+  - type: JSONStructure
+    url: json-structure/jservice-clue-structure.json
+  - type: JSONStructure
+    url: json-structure/jservice-category-structure.json
+  - type: JSONLD
+    url: json-ld/jservice-context.jsonld
+  - type: SpectralRules
+    url: rules/jservice-rules.yml
+  - type: Capabilities
+    url: capabilities/trivia-game.yaml
+  - type: Examples
+    url: examples/jservice-random-example.json
+  - type: Vocabulary
+    url: vocabulary/jservice-vocabulary.yml
+  - type: Status
+    url: https://jservice.io
+  - type: License
+    url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
+  - type: Authentication
+    url: null
+  - type: RateLimits
+    url: null
+- aid: jservice:jservice-clues-api
+  name: jService Clues API
+  description: Jeopardy! questions, answers, and metadata.
+  humanURL: https://github.com/sottenad/jService
+  baseURL: http://jservice.io
+  tags:
+  - Clues
+  properties:
+  - type: OpenAPI
+    url: openapi/jservice-clues-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/sottenad/jService#readme
+  - type: SourceCode
+    url: https://github.com/sottenad/jService
+  - type: JSONSchema
+    url: json-schema/jservice-clue-schema.json
+  - type: JSONSchema
+    url: json-schema/jservice-category-schema.json
+  - type: JSONStructure
+    url: json-structure/jservice-clue-structure.json
+  - type: JSONStructure
+    url: json-structure/jservice-category-structure.json
+  - type: JSONLD
+    url: json-ld/jservice-context.jsonld
+  - type: SpectralRules
+    url: rules/jservice-rules.yml
+  - type: Capabilities
+    url: capabilities/trivia-game.yaml
+  - type: Examples
+    url: examples/jservice-random-example.json
+  - type: Vocabulary
+    url: vocabulary/jservice-vocabulary.yml
+  - type: Status
+    url: https://jservice.io
+  - type: License
+    url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
+  - type: Authentication
+    url: null
+  - type: RateLimits
+    url: null
+- aid: jservice:jservice-moderation-api
+  name: jService Moderation API
+  description: User-driven reporting of invalid clues.
+  humanURL: https://github.com/sottenad/jService
+  baseURL: http://jservice.io
+  tags:
+  - Moderation
+  properties:
+  - type: OpenAPI
+    url: openapi/jservice-moderation-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/sottenad/jService#readme
+  - type: SourceCode
+    url: https://github.com/sottenad/jService
+  - type: JSONSchema
+    url: json-schema/jservice-clue-schema.json
+  - type: JSONSchema
+    url: json-schema/jservice-category-schema.json
+  - type: JSONStructure
+    url: json-structure/jservice-clue-structure.json
+  - type: JSONStructure
+    url: json-structure/jservice-category-structure.json
+  - type: JSONLD
+    url: json-ld/jservice-context.jsonld
+  - type: SpectralRules
+    url: rules/jservice-rules.yml
+  - type: Capabilities
+    url: capabilities/trivia-game.yaml
+  - type: Examples
+    url: examples/jservice-random-example.json
+  - type: Vocabulary
+    url: vocabulary/jservice-vocabulary.yml
+  - type: Status
+    url: https://jservice.io
+  - type: License
+    url: https://github.com/sottenad/jService/blob/master/LICENSE.txt
+  - type: Authentication
+    url: null
+  - type: RateLimits
+    url: null
 common:
   - type: AgenticAccess
     url: agentic-access/jservice-agentic-access.yml
