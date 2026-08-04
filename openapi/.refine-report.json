@@ -1,0 +1,18 @@
+{
+  "provider": "jservice",
+  "sources": [
+    "jservice-categories-api-openapi.yml",
+    "jservice-clues-api-openapi.yml",
+    "jservice-moderation-api-openapi.yml"
+  ],
+  "outputs": [
+    "jservice-categories-api-openapi.yml",
+    "jservice-clues-api-openapi.yml",
+    "jservice-moderation-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
