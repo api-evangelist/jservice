@@ -71,8 +71,6 @@ apis:
     url: json-ld/jservice-context.jsonld
   - type: SpectralRules
     url: rules/jservice-rules.yml
-  - type: Capabilities
-    url: capabilities/trivia-game.yaml
   - type: Examples
     url: examples/jservice-random-example.json
   - type: Vocabulary
@@ -111,8 +109,6 @@ apis:
     url: json-ld/jservice-context.jsonld
   - type: SpectralRules
     url: rules/jservice-rules.yml
-  - type: Capabilities
-    url: capabilities/trivia-game.yaml
   - type: Examples
     url: examples/jservice-random-example.json
   - type: Vocabulary
@@ -151,8 +147,6 @@ apis:
     url: json-ld/jservice-context.jsonld
   - type: SpectralRules
     url: rules/jservice-rules.yml
-  - type: Capabilities
-    url: capabilities/trivia-game.yaml
   - type: Examples
     url: examples/jservice-random-example.json
   - type: Vocabulary
@@ -166,6 +160,8 @@ apis:
   - type: RateLimits
     url: null
 common:
+  - type: IssueTracker
+    url: https://github.com/sottenad/jService/issues
   - type: AgenticAccess
     url: agentic-access/jservice-agentic-access.yml
   - type: DomainSecurity
