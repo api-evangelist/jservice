@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "jService Trivia Categories API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://jservice.io/api/categories",
+            "params": [
+              {
+                "name": "count",
+                "value": "",
+                "type": "query",
+                "description": "Number of categories to return (max 100)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset."
+              }
+            ]
+          },
+          "docs": "List categories with offset/count pagination. Default count 1, maximum 100."
+        },
+        {
+          "info": {
+            "name": "Get Single Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://jservice.io/api/category",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Category ID."
+              }
+            ]
+          },
+          "docs": "Get one category by ID, including all of its clues."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

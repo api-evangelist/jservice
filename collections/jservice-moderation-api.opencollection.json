@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "jService Trivia Categories Moderation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Moderation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mark Clue Invalid",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://jservice.io/api/invalid",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Clue ID to flag as invalid."
+              }
+            ]
+          },
+          "docs": "Increment the `invalid_count` for a clue, used to flag bad questions/answers."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

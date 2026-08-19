@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "jService Trivia Categories Clues API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Random Clues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://jservice.io/api/random",
+            "params": [
+              {
+                "name": "count",
+                "value": "",
+                "type": "query",
+                "description": "Number of clues to return (max 100)."
+              }
+            ]
+          },
+          "docs": "Returns N random clues, including the parent category. Default 1, maximum 100."
+        },
+        {
+          "info": {
+            "name": "Get Final Jeopardy Clues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://jservice.io/api/final",
+            "params": [
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns N random Final Jeopardy clues (clues with no `value`). Default 1, maximum 100."
+        },
+        {
+          "info": {
+            "name": "List Clues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://jservice.io/api/clues",
+            "params": [
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "Filter by dollar value of the clue."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category ID."
+              },
+              {
+                "name": "min_date",
+                "value": "",
+                "type": "query",
+                "description": "Earliest airdate (parsed via Chronic, e.g. \"2010-01-01\")."
+              },
+              {
+                "name": "max_date",
+                "value": "",
+                "type": "query",
+                "description": "Latest airdate (parsed via Chronic)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset."
+              },
+              {
+                "name": "game_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by Jeopardy! game ID."
+              }
+            ]
+          },
+          "docs": "List clues with optional filters. Page size is fixed at 100; use `offset` for pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

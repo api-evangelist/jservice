@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "e4d4f687-d85b-4ae6-b418-cc8f08c7c3e5",
+      "name": "Categories",
+      "description": {
+        "content": "Category collections of clues.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d750a8c-a5e5-4112-8b71-16dab656a8bb",
+          "name": "List Categories",
+          "request": {
+            "name": "List Categories",
+            "description": {
+              "content": "List categories with offset/count pagination. Default count 1, maximum 100.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "1",
+                  "description": "Number of categories to return (max 100)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Pagination offset."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e7c50323-100c-4ebd-bc11-b0edfb9efd34",
+              "name": "Array of categories.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "count",
+                      "value": "1"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8223,\n    \"title\": \"string\",\n    \"created_at\": \"2010-09-21T16:41:30.214Z\",\n    \"updated_at\": \"2006-12-15T15:51:20.493Z\",\n    \"clues_count\": 0\n  },\n  {\n    \"id\": 2465,\n    \"title\": \"string\",\n    \"created_at\": \"1951-03-27T13:19:10.042Z\",\n    \"updated_at\": \"1954-09-30T16:31:24.933Z\",\n    \"clues_count\": 0\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5de44bf2-e711-4034-99c5-cd3e6d0daba5",
+          "name": "Get Single Category",
+          "request": {
+            "name": "Get Single Category",
+            "description": {
+              "content": "Get one category by ID, including all of its clues.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "category"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Category ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca11a255-db58-4a9e-94f6-66ac75c3d061",
+              "name": "A category with embedded clues.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "category"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9060,\n  \"title\": \"string\",\n  \"created_at\": \"1980-07-02T08:30:54.772Z\",\n  \"updated_at\": \"1977-11-18T21:31:42.548Z\",\n  \"clues_count\": 0,\n  \"clues\": [\n    {\n      \"id\": 3923,\n      \"answer\": \"string\",\n      \"question\": \"string\",\n      \"category_id\": 8768,\n      \"value\": 7793,\n      \"airdate\": \"1954-01-01T18:00:06.058Z\",\n      \"game_id\": 4834,\n      \"invalid_count\": 437\n    },\n    {\n      \"id\": 4974,\n      \"answer\": \"string\",\n      \"question\": \"string\",\n      \"category_id\": 1937,\n      \"value\": 1824,\n      \"airdate\": \"1971-08-30T20:56:40.960Z\",\n      \"game_id\": 3280,\n      \"invalid_count\": 9100\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b983baf5-e245-4c77-a3e5-9eee0aeb365b",
+              "name": "Category not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "category"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://jservice.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c6a95b2f-8f76-4399-8126-0e957f93f00c",
+    "name": "jService Trivia Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "jService is an open source Ruby on Rails API that serves Jeopardy! questions\n(called \"clues\"), answers, and categories sourced from the J! Archive fan site.\n\nThe schema in this document is reconstructed from the upstream source repository\n(`sottenad/jService`, MIT licensed). The historical public deployment at\nhttps://jservice.io is offline as of 2025 (parked / for-sale holding page); the\nproject remains self-hostable against PostgreSQL.\n\nAll endpoints return JSON. None require authentication; no rate limits are\ndocumented in the source.\n\n\nContact Support:\n Name: Steve Ottenad",
+      "type": "text/plain"
+    }
+  }
+}

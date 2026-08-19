@@ -1,0 +1,151 @@
+{
+  "item": [
+    {
+      "id": "df638437-3a1a-4982-942a-97f65c6afd2c",
+      "name": "Moderation",
+      "description": {
+        "content": "User-driven reporting of invalid clues.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e8d08fca-3401-4c9f-b8ac-e41b1000f243",
+          "name": "Mark Clue Invalid",
+          "request": {
+            "name": "Mark Clue Invalid",
+            "description": {
+              "content": "Increment the `invalid_count` for a clue, used to flag bad questions/answers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "invalid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Clue ID to flag as invalid."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09debe93-431a-45c1-8ab6-feacdf89cd45",
+              "name": "The updated clue.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "invalid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8356,\n  \"answer\": \"string\",\n  \"question\": \"string\",\n  \"category_id\": 7792,\n  \"value\": 8121,\n  \"airdate\": \"2010-04-13T00:28:14.719Z\",\n  \"game_id\": 9839,\n  \"invalid_count\": 104\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eaeb5216-ccde-4c8c-9ee4-5159b5e55f7f",
+              "name": "Clue not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "invalid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://jservice.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "51c68da2-5767-4dd9-aa34-15f3b8c49fe2",
+    "name": "jService Trivia Categories Moderation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "jService is an open source Ruby on Rails API that serves Jeopardy! questions\n(called \"clues\"), answers, and categories sourced from the J! Archive fan site.\n\nThe schema in this document is reconstructed from the upstream source repository\n(`sottenad/jService`, MIT licensed). The historical public deployment at\nhttps://jservice.io is offline as of 2025 (parked / for-sale holding page); the\nproject remains self-hostable against PostgreSQL.\n\nAll endpoints return JSON. None require authentication; no rate limits are\ndocumented in the source.\n\n\nContact Support:\n Name: Steve Ottenad",
+      "type": "text/plain"
+    }
+  }
+}

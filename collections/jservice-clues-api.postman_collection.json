@@ -1,0 +1,333 @@
+{
+  "item": [
+    {
+      "id": "2045b270-9072-43ae-b196-1d083d08b290",
+      "name": "Clues",
+      "description": {
+        "content": "Jeopardy! questions, answers, and metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a4447dbc-f614-4b4a-8bc4-7d3963ad43fe",
+          "name": "Get Random Clues",
+          "request": {
+            "name": "Get Random Clues",
+            "description": {
+              "content": "Returns N random clues, including the parent category. Default 1, maximum 100.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "1",
+                  "description": "Number of clues to return (max 100)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9d2d60b-33f0-44cc-abd2-0375d6e29c66",
+              "name": "Array of random clues with category embedded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "count",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5667,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 1123,\n    \"value\": 9615,\n    \"airdate\": \"2001-06-08T05:36:48.728Z\",\n    \"game_id\": 4100,\n    \"invalid_count\": 6789,\n    \"category\": {\n      \"id\": 5533,\n      \"title\": \"string\",\n      \"created_at\": \"2020-08-22T21:35:48.136Z\",\n      \"updated_at\": \"2015-09-04T10:29:42.162Z\",\n      \"clues_count\": 0\n    }\n  },\n  {\n    \"id\": 9485,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 2547,\n    \"value\": 7890,\n    \"airdate\": \"1972-10-12T09:20:20.457Z\",\n    \"game_id\": 3082,\n    \"invalid_count\": 9300,\n    \"category\": {\n      \"id\": 4266,\n      \"title\": \"string\",\n      \"created_at\": \"1979-09-03T03:47:05.453Z\",\n      \"updated_at\": \"2013-01-31T13:31:08.943Z\",\n      \"clues_count\": 0\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e6aeddd-5b98-439a-8873-54b659964037",
+          "name": "Get Final Jeopardy Clues",
+          "request": {
+            "name": "Get Final Jeopardy Clues",
+            "description": {
+              "content": "Returns N random Final Jeopardy clues (clues with no `value`). Default 1, maximum 100.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "final"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f571f92c-954a-4133-a2c3-634e0d9524da",
+              "name": "Array of Final Jeopardy clues with category embedded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "final"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "count",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5667,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 1123,\n    \"value\": 9615,\n    \"airdate\": \"2001-06-08T05:36:48.728Z\",\n    \"game_id\": 4100,\n    \"invalid_count\": 6789,\n    \"category\": {\n      \"id\": 5533,\n      \"title\": \"string\",\n      \"created_at\": \"2020-08-22T21:35:48.136Z\",\n      \"updated_at\": \"2015-09-04T10:29:42.162Z\",\n      \"clues_count\": 0\n    }\n  },\n  {\n    \"id\": 9485,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 2547,\n    \"value\": 7890,\n    \"airdate\": \"1972-10-12T09:20:20.457Z\",\n    \"game_id\": 3082,\n    \"invalid_count\": 9300,\n    \"category\": {\n      \"id\": 4266,\n      \"title\": \"string\",\n      \"created_at\": \"1979-09-03T03:47:05.453Z\",\n      \"updated_at\": \"2013-01-31T13:31:08.943Z\",\n      \"clues_count\": 0\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e77df1a0-7a60-4848-8187-e6badb455b2a",
+          "name": "List Clues",
+          "request": {
+            "name": "List Clues",
+            "description": {
+              "content": "List clues with optional filters. Page size is fixed at 100; use `offset` for pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "clues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "<integer>",
+                  "description": "Filter by dollar value of the clue."
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<integer>",
+                  "description": "Filter by category ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "min_date",
+                  "value": "<date>",
+                  "description": "Earliest airdate (parsed via Chronic, e.g. \"2010-01-01\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "max_date",
+                  "value": "<date>",
+                  "description": "Latest airdate (parsed via Chronic)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Pagination offset."
+                },
+                {
+                  "disabled": false,
+                  "key": "game_id",
+                  "value": "<integer>",
+                  "description": "Filter by Jeopardy! game ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80f7dc05-8b17-434a-8256-c5a7b4d1815c",
+              "name": "Array of clues matching the filters (up to 100 per page).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "clues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "value",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "min_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "max_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "game_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5667,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 1123,\n    \"value\": 9615,\n    \"airdate\": \"2001-06-08T05:36:48.728Z\",\n    \"game_id\": 4100,\n    \"invalid_count\": 6789,\n    \"category\": {\n      \"id\": 5533,\n      \"title\": \"string\",\n      \"created_at\": \"2020-08-22T21:35:48.136Z\",\n      \"updated_at\": \"2015-09-04T10:29:42.162Z\",\n      \"clues_count\": 0\n    }\n  },\n  {\n    \"id\": 9485,\n    \"answer\": \"string\",\n    \"question\": \"string\",\n    \"category_id\": 2547,\n    \"value\": 7890,\n    \"airdate\": \"1972-10-12T09:20:20.457Z\",\n    \"game_id\": 3082,\n    \"invalid_count\": 9300,\n    \"category\": {\n      \"id\": 4266,\n      \"title\": \"string\",\n      \"created_at\": \"1979-09-03T03:47:05.453Z\",\n      \"updated_at\": \"2013-01-31T13:31:08.943Z\",\n      \"clues_count\": 0\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://jservice.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8727251d-d32d-44f6-8c9b-2f24b45e2217",
+    "name": "jService Trivia Categories Clues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "jService is an open source Ruby on Rails API that serves Jeopardy! questions\n(called \"clues\"), answers, and categories sourced from the J! Archive fan site.\n\nThe schema in this document is reconstructed from the upstream source repository\n(`sottenad/jService`, MIT licensed). The historical public deployment at\nhttps://jservice.io is offline as of 2025 (parked / for-sale holding page); the\nproject remains self-hostable against PostgreSQL.\n\nAll endpoints return JSON. None require authentication; no rate limits are\ndocumented in the source.\n\n\nContact Support:\n Name: Steve Ottenad",
+      "type": "text/plain"
+    }
+  }
+}
