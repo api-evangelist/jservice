@@ -8,6 +8,18 @@ description: >-
   The API exposes random clues, final Jeopardy clues, filtered clue queries, category
   listings, single-category lookup, and invalid-clue reporting under /api/*.
 url: https://github.com/sottenad/jService
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
