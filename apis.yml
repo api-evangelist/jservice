@@ -9,16 +9,21 @@ description: >-
   listings, single-category lookup, and invalid-clue reporting under /api/*.
 url: https://github.com/sottenad/jService
 deliveryModel:
-  model: unknown
-  open_source: unknown
+  model: self-hosted
+  license: MIT
+  license_evidence:
+    repo: sottenad/jservice
+    spdx: MIT
+    stars: 485
+  open_source: true
   commercial: false
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
   - openapi
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -52,7 +57,7 @@ tags:
   - Games And Comics
   - Trivia
   - Jeopardy
-  - Open-Source
+  - Open Source
   - Ruby
   - Rail
   - Public APIs
@@ -64,6 +69,7 @@ tags_raw:
   - Ruby
   - Rails
   - Public APIs
+  - Open-Source
 apis:
 - aid: jservice:jservice-categories-api
   name: jService Categories API

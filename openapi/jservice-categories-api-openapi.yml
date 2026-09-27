@@ -80,6 +80,25 @@ paths:
           description: Category not found.
 components:
   schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        clues_count:
+          type: integer
+          default: 0
+      required:
+      - id
+      - title
     Clue:
       type: object
       properties:
@@ -124,22 +143,3 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Clue'
-    Category:
-      type: object
-      properties:
-        id:
-          type: integer
-        title:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        clues_count:
-          type: integer
-          default: 0
-      required:
-      - id
-      - title
