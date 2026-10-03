@@ -131,13 +131,6 @@ paths:
                   $ref: '#/components/schemas/ClueWithCategory'
 components:
   schemas:
-    ClueWithCategory:
-      allOf:
-      - $ref: '#/components/schemas/Clue'
-      - type: object
-        properties:
-          category:
-            $ref: '#/components/schemas/Category'
     Category:
       type: object
       properties:
@@ -157,6 +150,13 @@ components:
       required:
       - id
       - title
+    ClueWithCategory:
+      allOf:
+      - $ref: '#/components/schemas/Clue'
+      - type: object
+        properties:
+          category:
+            $ref: '#/components/schemas/Category'
     Clue:
       type: object
       properties:
