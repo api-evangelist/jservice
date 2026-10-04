@@ -131,32 +131,6 @@ paths:
                   $ref: '#/components/schemas/ClueWithCategory'
 components:
   schemas:
-    Category:
-      type: object
-      properties:
-        id:
-          type: integer
-        title:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        clues_count:
-          type: integer
-          default: 0
-      required:
-      - id
-      - title
-    ClueWithCategory:
-      allOf:
-      - $ref: '#/components/schemas/Clue'
-      - type: object
-        properties:
-          category:
-            $ref: '#/components/schemas/Category'
     Clue:
       type: object
       properties:
@@ -192,3 +166,29 @@ components:
       - answer
       - question
       - category_id
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        clues_count:
+          type: integer
+          default: 0
+      required:
+      - id
+      - title
+    ClueWithCategory:
+      allOf:
+      - $ref: '#/components/schemas/Clue'
+      - type: object
+        properties:
+          category:
+            $ref: '#/components/schemas/Category'
