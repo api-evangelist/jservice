@@ -54,15 +54,13 @@ x-license: MIT
 x-language: Ruby
 x-data-source: J! Archive (j-archive.com)
 tags:
-  - Games And Comics
   - Trivia
   - Jeopardy
   - Open Source
   - Ruby
-  - Rail
+  - Rails
   - Public APIs
 tags_raw:
-  - Games And Comics
   - Trivia
   - Jeopardy
   - Open Source
@@ -205,3 +203,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-tags-removed:
+- Games And Comics
