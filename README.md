@@ -1,4 +1,4 @@
-# jService (jservice)
+# jService
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,70 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 jService is an open source Ruby on Rails trivia API that serves approximately 200,000 Jeopardy! questions, answers, and categories scraped from the J! Archive fan site. The original public deployment at jservice.io is no longer operational, but the project (sottenad/jService, MIT licensed) remains available for self-hosting against PostgreSQL. The API exposes random clues, final Jeopardy clues, filtered clue queries, category listings, single-category lookup, and invalid-clue reporting under /api/*.
 
-**APIs.json:** [https://github.com/sottenad/jService](https://github.com/sottenad/jService)
+**Areas:** Trivia · Jeopardy · Open Source · Ruby · Rails · Public APIs
 
-## Tags
+## jService on APIs.io (historical record)
 
-- Games And Comics
-- Trivia
-- Jeopardy
-- Open Source
-- Ruby
-- Rails
-- Public APIs
+Everything profiled for jService is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/jservice/](https://apis.io/providers/jservice/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-30
+- [jService Categories API](https://apis.io/apis/jservice/jservice-categories-api/) — Category collections of clues.
+- [jService Clues API](https://apis.io/apis/jservice/jservice-clues-api/) — Jeopardy! questions, answers, and metadata.
+- [jService Moderation API](https://apis.io/apis/jservice/jservice-moderation-api/) — User-driven reporting of invalid clues.
 
-## APIs
+### Published properties
 
-### jService Trivia API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST/JSON API exposing Jeopardy! clues, categories, and random questions, designed for trivia apps, study tools, chatbots, and game shows. Self-hosted against PostgreSQL; the historical public endpoint at jservice.io is offline.
+#### Agentic access (1)
 
-- **Human URL:** [https://github.com/sottenad/jService](https://github.com/sottenad/jService)
-- **Base URL:** `http://jservice.io`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Jservice Agentic Access](https://apis.io/agentic-access/jservice/jservice-agentic-access/)
 
-- Trivia
-- Jeopardy
-- Games And Comics
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://github.com/sottenad/jService#readme)
-- [Source Code](https://github.com/sottenad/jService)
-- [OpenAPI](openapi/jservice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/jservice.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/jservice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/jservice-clue-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/jservice-category-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/jservice-clue-structure.json)
-- [JSON Structure](json-structure/jservice-category-structure.json)
-- [JSON-LD](json-ld/jservice-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/jservice-rules.yml)
-- [Capabilities](capabilities/trivia-game.yaml)
-- [Examples](examples/jservice-random-example.json)
-- [Vocabulary](vocabulary/jservice-vocabulary.yml)
-- [Status](https://jservice.io)
-- [License](https://github.com/sottenad/jService/blob/master/LICENSE.txt)
-- [Authentication](undefined)
-- [Rate Limit](undefined)
+- [jService Category](https://apis.io/schemas/jservice/jservice-category/)
+- [jService Clue](https://apis.io/schemas/jservice/jservice-clue/)
 
-## Common Properties
+#### JSON Structure (2)
+
+Data models expressed in JSON Structure.
+
+- [Jservice Category Structure](https://apis.io/json-structure/jservice/jservice-category-structure/)
+- [Jservice Clue Structure](https://apis.io/json-structure/jservice/jservice-clue-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Jservice Context](https://apis.io/jsonld/jservice/jservice-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [jService Vocabulary](https://apis.io/vocabularies/jservice/jservice-vocabulary/)
+
+#### Examples (6)
+
+Example requests and responses.
+
+- [Jservice Categories Example](https://apis.io/examples/jservice/jservice-categories-example/)
+- [Jservice Category Example](https://apis.io/examples/jservice/jservice-category-example/)
+- [Jservice Clues Example](https://apis.io/examples/jservice/jservice-clues-example/)
+- [Jservice Final Example](https://apis.io/examples/jservice/jservice-final-example/)
+- [Jservice Invalid Example](https://apis.io/examples/jservice/jservice-invalid-example/)
+- [Jservice Random Example](https://apis.io/examples/jservice/jservice-random-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [jService Trivia API](https://apis.io/collections/jservice/open-jservice/)
+- [jService Trivia Categories API](https://apis.io/collections/jservice/open-jservice-categories-api/)
+- [jService Trivia Categories Clues API](https://apis.io/collections/jservice/open-jservice-clues-api/)
+- [jService Trivia Categories Moderation API](https://apis.io/collections/jservice/open-jservice-moderation-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [jService — jsonschema rules](https://apis.io/rules/jservice/jservice-jsonschema-spectral-rules/)
+- [jService API Rules](https://apis.io/rules/jservice/jservice-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Jservice Domain Security](https://apis.io/security/jservice/jservice-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://github.com/sottenad/jService)
-- [Source Code](https://github.com/sottenad/jService)
-- [Public APIs Listing](https://github.com/public-apis/public-apis)
-- [License](https://github.com/sottenad/jService/blob/master/LICENSE.txt)
-- [Data Source](https://j-archive.com)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for jService: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/jservice/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
